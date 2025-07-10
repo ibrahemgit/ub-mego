@@ -392,3 +392,12 @@ jQuery(document).ready(function ($) {
     });
 });
 
+
+
+
+/* megubdate */
+jQuery(document).ready(function ($) {
+  setTimeout(function () {
+    $('.popubleadform').toggleClass('active');
+  }, 7000);
+});
