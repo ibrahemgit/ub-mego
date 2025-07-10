@@ -66,7 +66,6 @@ function ib_files($asdasd){
     wp_localize_script('min_scripts', 'ajax_object', array(
         'ajax_url'       => admin_url('admin-ajax.php'),
         'thank_you_url'  => $thank_you_url,
-        'author_name'    => get_author_name_with_default(),  // استدعاء دالة مخصصة لإرجاع اسم الكاتب
     ));
     
 
@@ -173,25 +172,6 @@ add_action('init', function() {
     }
 });
 */
-function get_author_name_with_default() {
-    $custom_authors = array(
-        'monaem' => 'monaem',
-        'mohsalah' => 'adel', 
-        'Omarashry' => 'omar', 
-    );
-
-    global $post;
-    if (!$post) return 'no post';
-    $author_id = $post->post_author;
-    $author_login = get_the_author_meta('user_login', $author_id);
-
-    // تتبع القيم
-    if (array_key_exists($author_login, $custom_authors)) {
-        return $custom_authors[$author_login];
-    }
-
-    return $author_login;
-}
 
 
 

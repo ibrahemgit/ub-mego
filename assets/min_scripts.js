@@ -210,7 +210,6 @@ $('.gallry_logos').slick({
           title: PTitle,
           url: pUrl,
           zone : timeZone,
-          team: ajax_object.author_name,
       },
       success: function(response) {
       },

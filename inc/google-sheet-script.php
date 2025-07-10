@@ -4,7 +4,7 @@
 add_action('admin_notices', function() {
     ?>
     <div class="notice notice-success is-dismissible">
-        <p><?php _e('انت علي اخر تحديث اليدز هتروح لجوجل شيت.'); ?></p>
+        <p><?php _e('<b style="font-size:25px">Hello Abdelmajeed Team</b>'); ?></p>
     </div>
     <?php
 });
@@ -17,13 +17,12 @@ function handle_submit_to_google_form() {
     $title = isset($_POST['title']) ? sanitize_text_field($_POST['title']) : '';
     $url   = isset($_POST['url']) ? esc_url_raw($_POST['url']) : '';
     $zone   = isset($_POST['zone']) ? sanitize_text_field($_POST['zone']) : '';
-    $team   = isset($_POST['team']) ? sanitize_text_field($_POST['team']) : '';
 
     if (empty($name) || empty($phone) || empty($title) || empty($url)) {
         wp_send_json_error('الرجاء تعبئة جميع الحقول.');
     }
 
-    if (submit_to_google_form($name, $phone, $title, $url, $zone, $team)) {
+    if (submit_to_google_form($name, $phone, $title, $url, $zone)) {
         wp_send_json_success();
     } else {
         wp_send_json_error('فشل في الإرسال. يرجى المحاولة لاحقًا.');
@@ -32,16 +31,15 @@ function handle_submit_to_google_form() {
     wp_die();
 }
 
-function submit_to_google_form($email, $phone, $title, $url, $zone, $team) {
-    $form_url = 'https://docs.google.com/forms/d/e/1FAIpQLSen9l9aAPnBQlCfJ3YrrUH9KQpWjbd8Wde0QQQ5BGeOGePVmQ/formResponse';
+function submit_to_google_form($email, $phone, $title, $url, $zone) {
+    $form_url = 'https://docs.google.com/forms/d/e/1FAIpQLScdtBEgLd5vqZmnhJPhNklCgK-t0Y3WyZWCvQJK8biVTzfEtg/formResponse';
 
     $post_fields = array(
-        'entry.1733048754' => $email,
-        'entry.1559449813' => $phone,
-        'entry.1705565888' => $title,
-        'entry.1596108963' => $url,
-        'entry.1585418385' => $zone,   // إضافة حقل الـ zone
-        'entry.297660856' => $team    // إضافة حقل الـ team
+        'entry.885653522' => $email,
+        'entry.479861034' => $phone,
+        'entry.564818666' => $title,
+        'entry.978247542' => $url,
+        'entry.1046139998' => $zone,   // إضافة حقل الـ zone
     );
 
     $post_fields = array_map('sanitize_text_field', $post_fields);

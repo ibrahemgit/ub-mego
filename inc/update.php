@@ -28,7 +28,7 @@ function check_theme_update_from_github_json($transient) {
     $current_version = $theme_data->get('Version');
 
     // رابط ملف JSON على GitHub
-    $json_url = 'https://raw.githubusercontent.com/ibrahemgit/theme_updater/main/hello_Jinx/theme-update.json';
+    $json_url = 'https://raw.githubusercontent.com/ibrahemgit/ub-mego/refs/heads/main/theme-update.json';
 
     // جلب بيانات التحديث
     $response = wp_remote_get($json_url, array(

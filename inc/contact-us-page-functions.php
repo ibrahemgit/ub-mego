@@ -95,7 +95,7 @@ function handle_contact_form() {
         } elseif (!empty($custom_email) && is_email($custom_email)) {
             $final_email = $custom_email;
         } else {
-            $final_email = 'boldd.routes@gmail.com';
+            $final_email = '';
         }
         
         $headers = array('Content-Type: text/plain; charset=UTF-8');
