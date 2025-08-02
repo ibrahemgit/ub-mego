@@ -1,8 +1,9 @@
 {
-    "version": "3.0.8",
+    "version": "3.0.7",
     "download_url": "https://github.com/ibrahemgit/ub-mego/archive/refs/heads/main.zip",
     "details_url": "https://github.com/ibrahemgit/ub-mego",
     "requires": "6.0",
     "requires_php": "7.4"
 
 }
+
